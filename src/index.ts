@@ -4,7 +4,7 @@ dotenv.config();
 const app = express();
 
 const PORT = process.env.PORT || 3000;
-let a = b;
+let a = b + c;
 app.listen(3000, () => {
   console.log("server running on port : " + PORT);
 });
