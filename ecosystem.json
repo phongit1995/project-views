@@ -5,6 +5,7 @@
       "scipt": "yarn",
       "args": "start",
       "merge_logs": true,
+      "interpreter": "bash",
       "env": {
         "NODE_ENV": "development",
         "PORT": 5000,
