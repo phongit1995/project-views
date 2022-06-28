@@ -2,7 +2,7 @@
   "apps": [
     {
       "name": "nghe-nhin",
-      "scipt": "yarn",
+      "script": "yarn",
       "args": "start",
       "merge_logs": true,
       "interpreter": "bash",
