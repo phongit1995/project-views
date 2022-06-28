@@ -1,7 +1,8 @@
 {
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "nodemon --watch ./src --ext js,jsx,ts,tsx,json,gql --exec ts-node --transpile-only 'src/index.ts'",
+    "dev": "nodemon --watch ./src --ext js,jsx,ts,tsx,json,gql --exec ts-node --transpile-only src/index.ts",
+    "start": "ts-node --transpile-only src/index.ts",
     "lint": "yarn eslint .",
     "prepare": "husky install"
   },

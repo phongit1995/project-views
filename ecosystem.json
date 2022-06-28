@@ -1,0 +1,15 @@
+{
+  "apps": [
+    {
+      "name": "nghe-nhin",
+      "scipt": "yarn",
+      "args": "start",
+      "merge_logs": true,
+      "env": {
+        "NODE_ENV": "development",
+        "PORT": 5000,
+        "MONGO_URL": "mongodb://Phong:Phongit1995@localhost:27017/mangareader?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&ssl=false"
+      }
+    }
+  ]
+}
