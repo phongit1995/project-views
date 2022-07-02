@@ -8,4 +8,7 @@ export const codeVerifyScheme = new Schema(
   },
   { timestamps: true },
 );
-export const codeModel = model<CodeVerify>("code", codeVerifyScheme);
+export const codeVerifyModel = model<CodeVerify>(
+  "code-verify",
+  codeVerifyScheme,
+);
