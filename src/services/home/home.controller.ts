@@ -3,7 +3,8 @@ import { ListImage } from "./home.constant";
 import { HomeService } from "./home.service";
 
 export const indexController = (req, res: Response) => {
-  res.render("home");
+  console.log("Phong");
+  return res.render("home");
 };
 export const homeController = (req, res: Response) => {
   res.render("home");
