@@ -7,6 +7,7 @@ export const loginAdminController = (req, res) => {
   if (email != "admin@gmail.com" || password != "123456") {
     return res.redirect("/admin/login");
   }
+  req.session.adminLogin = true;
   return res.redirect("/admin");
 };
 export const renderDashboardController = (req, res) => {

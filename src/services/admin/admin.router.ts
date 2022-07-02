@@ -1,3 +1,4 @@
+import { requiredAdminMiddleware } from "./../../common/middleware";
 import express from "express";
 import {
   handleAddCodeController,
@@ -13,16 +14,32 @@ import {
   renderVerifyController,
 } from "./admin.controller";
 const router = express.Router();
-router.get("/", renderDashboardController);
+router.get("/", requiredAdminMiddleware, renderDashboardController);
 router.get("/login", renderLoginController);
 router.post("/login", loginAdminController);
-router.get("/code", renderCodeController);
-router.get("/code/add", renderAddCodeController);
-router.post("/code/add", handleAddCodeController);
-router.post("/code/delete/:id", handleDeleteCodeController);
+router.get("/code", requiredAdminMiddleware, renderCodeController);
+router.get("/code/add", requiredAdminMiddleware, renderAddCodeController);
+router.post("/code/add", requiredAdminMiddleware, handleAddCodeController);
+router.post(
+  "/code/delete/:id",
+  requiredAdminMiddleware,
+  handleDeleteCodeController,
+);
 
-router.get("/verify", renderVerifyController);
-router.get("/verify/add", renderAddCodeVerifyController);
-router.post("/verify/add", handleAddCodeVerifyController);
-router.post("/verify/delete/:id", handleDeleteVerifyController);
+router.get("/verify", requiredAdminMiddleware, renderVerifyController);
+router.get(
+  "/verify/add",
+  requiredAdminMiddleware,
+  renderAddCodeVerifyController,
+);
+router.post(
+  "/verify/add",
+  requiredAdminMiddleware,
+  handleAddCodeVerifyController,
+);
+router.post(
+  "/verify/delete/:id",
+  requiredAdminMiddleware,
+  handleDeleteVerifyController,
+);
 export default router;
