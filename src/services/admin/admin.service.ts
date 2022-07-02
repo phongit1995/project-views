@@ -17,4 +17,8 @@ export class AdminService {
   public static addCodeVerify(code: string) {
     return codeVerifyModel.create({ code });
   }
+
+  public static deleteVerify(code: string) {
+    return codeVerifyModel.findByIdAndDelete(code);
+  }
 }

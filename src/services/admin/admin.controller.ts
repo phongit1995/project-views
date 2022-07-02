@@ -56,3 +56,13 @@ export const handleAddCodeVerifyController = async (req, res) => {
   await AdminService.addCodeVerify(code);
   return res.redirect("/admin/verify");
 };
+
+export const handleDeleteVerifyController = async (req, res) => {
+  const id = req.params.id;
+  try {
+    await AdminService.deleteVerify(id);
+    return res.redirect("/admin/verify");
+  } catch (error) {
+    return res.redirect("/admin/verify");
+  }
+};
