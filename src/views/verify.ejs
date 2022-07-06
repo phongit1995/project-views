@@ -15,27 +15,24 @@
 
 <body>
     <script>
-        function login() {
+        function verify() {
             if ($("#phone").val() == "" || $("#nhapmatext").val() == "") {
                 alert("Bạn chưa nhập đầy đủ thông tin, hãy kiểm tra lại");
                 return;
             } else {
                 var _code = $("#nhapmatext").val();
-                var _phone = $("#mobile-number").val();
                 var _platform = $("#platform").val();
 
                 $.ajax({
-                    url: "/check", //the page containing php script
-                    data: { type: "check", code: _code, phone: _phone, platform: _platform },
+                    url: "/verify", //the page containing php script
+                    data: { type: "verify", code: _code ,platform:_platform},
                     type: "POST", //request type
                     success: function (result) {
                         if (result == 0) {
                             alert("Bạn đã nhập sai mã phần mềm");
                         } else {
-                            // $('#submitButton').show();
-                            // $('#lBtn').hide();
-                            // $('#submitButton').trigger('click');
                             console.log(result);
+                            location.href = result.url;
                         }
 
                     },
@@ -53,63 +50,7 @@
                     
                 });
 
-                setTimeout(function () {
-                    $(document).ready(function () {
-                        document.getElementById("submitButton").setAttribute("data-loading", "10%");
-                        setTimeout(function () {
-                            $(document).ready(function () {
-                                document.getElementById("submitButton").setAttribute("data-loading", "20%");
-                            });
-                            setTimeout(function () {
-                                $(document).ready(function () {
-                                    document.getElementById("submitButton").setAttribute("data-loading", "30%");
-                                });
-                                setTimeout(function () {
-                                    $(document).ready(function () {
-                                        document.getElementById("submitButton").setAttribute("data-loading", "40%");
-                                    });
-                                    setTimeout(function () {
-                                        $(document).ready(function () {
-                                            document.getElementById("submitButton").setAttribute("data-loading", "50%");
-                                        });
-                                        setTimeout(function () {
-                                            $(document).ready(function () {
-                                                document.getElementById("submitButton").setAttribute("data-loading", "60%");
-                                            });
-                                            setTimeout(function () {
-                                                $(document).ready(function () {
-                                                    document.getElementById("submitButton").setAttribute("data-loading", "70%");
-                                                });
-                                                setTimeout(function () {
-                                                    $(document).ready(function () {
-                                                        document.getElementById("submitButton").setAttribute("data-loading", "80%");
-                                                    });
-                                                    setTimeout(function () {
-                                                        $(document).ready(function () {
-                                                            document.getElementById("submitButton").setAttribute("data-loading", "90%");
-                                                        });
-                                                        setTimeout(function () {
-                                                            $(document).ready(function () {
-                                                                document.getElementById("submitButton").setAttribute("data-loading", "100%");
-                                                            });
-
-                                                        }, 1000);
-                                                    }, 1000);
-                                                }, 1000);
-                                            }, 1000);
-                                        }, 1000);
-                                    }, 1000);
-                                }, 1000);
-                            }, 1000);
-                        }, 1000);
-                    });
-
-                }, 1000);
             }
-
-
-
-
         }
     </script>
 
@@ -133,14 +74,13 @@
                 <span></span>
                 <label>Mã xác thực</label>
             </div>
-            <input type="submit" value="XÁC THỰC" id="lBtn" onclick="login();"
+            <input type="submit" value="XÁC THỰC" id="lBtn" onclick="verify();"
                 style="text-align: center; margin-bottom: 20px;">
             <a id="submitButton" href="#" class="progress-button"
                 style="display: none; padding-bottom: 20px; font-size:34px; text-align: center; margin-bottom: 20px;width: 100%;height: 100px;vertical-align: middle; padding-top:30px;"></a>
 
             <script src="/templates/w3style/js/intlTelInput.js"></script>
             <script>
-                $("#mobile-number").intlTelInput();
             </script>
         </div>
     </div>

@@ -1,38 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');
-*{
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap");
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-body{
+body {
   margin: 0;
   padding: 0;
-  background: url(../images/background.jpg) no-repeat center center fixed; 
+  background: url(../images/background.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   display: block;
   margin: 0 auto;
-  display: flex;           /* establish flex container */
-    flex-direction: column;  /* make main axis vertical */
-    justify-content: center; /* center items vertically, in this case */
-    align-items: center;
-
+  display: flex; /* establish flex container */
+  flex-direction: column; /* make main axis vertical */
+  justify-content: center; /* center items vertically, in this case */
+  align-items: center;
 }
-.clearBoth { clear:both; }
+.clearBoth {
+  clear: both;
+}
 
-
-.box{
+.box {
   float: left;
-   display:         flex;
-  flex-wrap:       wrap;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   width: 80%;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
-  box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
   margin: 10px;
 }
 
@@ -41,17 +41,16 @@ body{
   width: 80%;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 10px;
-  box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
   margin: auto;
-   position: absolute;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 20px;
 }
 
-
-.box-c{
+.box-c {
   float: left;
   width: 380px;
   display: -webkit-box;
@@ -59,9 +58,9 @@ body{
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  justify-content:  center;
+  justify-content: center;
 }
-.box-lc{
+.box-lc {
   float: left;
   width: 80%;
   display: -webkit-box;
@@ -69,53 +68,52 @@ body{
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  justify-content:  center;
+  justify-content: center;
 }
 
-.box-image{
+.box-image {
   width: 90%;
   height: 90%;
   padding: 10px;
   border-radius: 10px;
   text-align: center;
-
 }
 
-.box-image img{
-   object-fit:  scale-down;
+.box-image img {
+  object-fit: scale-down;
   height: 220px;
   border-radius: 10px;
-  box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
-  background: #FFF;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
+  background: #fff;
 }
 
-.center{
+.center {
   float: left;
   display: block;
   position: relative;
   width: 80%;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 10px;
-  box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
   margin: auto;
   height: 550px;
 }
 
-.center h1{
+.center h1 {
   text-align: center;
   padding: 20px 0;
   border-bottom: 1px solid silver;
 }
-.center .form{
+.center .form {
   padding: 0 40px;
   box-sizing: border-box;
 }
-.form .txt_field{
+.form .txt_field {
   position: relative;
   border-bottom: 2px solid #adadad;
   margin: 30px 0;
 }
-.txt_field input{
+.txt_field input {
   width: 100%;
   padding: 0 5px;
   height: 100px;
@@ -124,7 +122,7 @@ body{
   background: none;
   outline: none;
 }
-.txt_field label{
+.txt_field label {
   position: absolute;
   top: 50%;
   left: 5px;
@@ -132,36 +130,36 @@ body{
   transform: translateY(-50%);
   font-size: 34px;
   pointer-events: none;
-  transition: .5s;
+  transition: 0.5s;
 }
-.txt_field span::before{
-  content: '';
+.txt_field span::before {
+  content: "";
   position: absolute;
   top: 100px;
   left: 0;
   width: 0%;
   height: 2px;
   background: #2691d9;
-  transition: .5s;
+  transition: 0.5s;
 }
 .txt_field input:focus ~ label,
-.txt_field input:valid ~ label{
+.txt_field input:valid ~ label {
   top: -5px;
   color: #2691d9;
 }
 .txt_field input:focus ~ span::before,
-.txt_field input:valid ~ span::before{
+.txt_field input:valid ~ span::before {
   width: 100%;
 }
-.pass{
+.pass {
   margin: -5px 0 20px 5px;
   color: #a6a6a6;
   cursor: pointer;
 }
-.pass:hover{
+.pass:hover {
   text-decoration: underline;
 }
-input[type="submit"]{
+input[type="submit"] {
   width: 100%;
   height: 100px;
   border: 1px solid;
@@ -173,20 +171,20 @@ input[type="submit"]{
   cursor: pointer;
   outline: none;
 }
-input[type="submit"]:hover{
+input[type="submit"]:hover {
   border-color: #2691d9;
-  transition: .5s;
+  transition: 0.5s;
 }
-.signup_link{
+.signup_link {
   margin: 30px 0;
   text-align: center;
   font-size: 16px;
   color: #666666;
 }
-.signup_link a{
+.signup_link a {
   color: #2691d9;
   text-decoration: none;
 }
-.signup_link a:hover{
+.signup_link a:hover {
   text-decoration: underline;
 }

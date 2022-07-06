@@ -21,7 +21,6 @@ export const loginController = (req: Request, res: Response) => {
 };
 
 export const checkLoginController = async (req: Request, res: Response) => {
-  console.log(req.body);
   const { code, platform } = req.body;
   if (!code) {
     return res.status(403).json({ message: "Vui lòng nhập mã phần mềm" });
@@ -45,6 +44,25 @@ export const verifyController = (req: Request, res: Response) => {
     app: { ...ListImage[checkAppsExits], platform: apps },
   });
 };
-export const verifyRequestController = (req: Request, res: Response) => {
-  res.render("verify");
+export const verifyRequestController = async (req: Request, res: Response) => {
+  const { code, platform } = req.body;
+  console.log(req.body);
+  if (!code) {
+    return res.status(403).json({ message: "Vui lòng nhập mã xác thực" });
+  }
+  const codeVerify = await HomeService.getCodeVerifyByName(code);
+  if (!codeVerify) {
+    return res.status(403).json({ message: "Bạn đã nhập sai mã xác thực" });
+  }
+  return res.json({
+    url: `/buy.html`,
+  });
+};
+
+export const renderBuyController = (req: Request, res: Response) => {
+  res.render("buy");
+};
+
+export const renderLoadingController = (req: Request, res: Response) => {
+  res.render("loading");
 };

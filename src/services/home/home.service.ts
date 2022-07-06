@@ -1,3 +1,4 @@
+import { codeVerifyModel } from "./../../models/code-verify.model";
 import { codeModel } from "./../../models/code.model";
 export class HomeService {
   public static getListCode() {
@@ -8,5 +9,8 @@ export class HomeService {
   }
   public static createCode(code) {
     return codeModel.create({ code });
+  }
+  public static getCodeVerifyByName(code: string) {
+    return codeVerifyModel.findOne({ code });
   }
 }
