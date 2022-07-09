@@ -52,3 +52,28 @@ body {
 .form-buy-border a:nth-child(4) {
   background-color: #454344;
 }
+#imageSuccess {
+  width: 600px;
+  height: 400px;
+}
+@media screen and (min-width: 769px) {
+  /* STYLES HERE */
+  #imageSuccess {
+    width: 500px;
+    height: 350px;
+  }
+}
+
+@media screen and (min-device-width: 481px) and (max-device-width: 768px) {
+  #imageSuccess {
+    width: 400px;
+    height: 300px;
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+  #imageSuccess {
+    width: 400px;
+    height: 300px;
+  }
+}

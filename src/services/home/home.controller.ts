@@ -66,3 +66,6 @@ export const renderBuyController = (req: Request, res: Response) => {
 export const renderLoadingController = (req: Request, res: Response) => {
   res.render("loading");
 };
+export const renderSuccessController = (req: Request, res: Response) => {
+  res.render("success");
+};

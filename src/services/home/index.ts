@@ -6,6 +6,7 @@ import {
   loginController,
   renderBuyController,
   renderLoadingController,
+  renderSuccessController,
   verifyController,
   verifyRequestController,
 } from "./home.controller";
@@ -18,4 +19,5 @@ router.get("/verify.html", verifyController);
 router.post("/verify", verifyRequestController);
 router.get("/buy.html", renderBuyController);
 router.get("/loading.html", renderLoadingController);
+router.get("/success.html", renderSuccessController);
 export default router;
