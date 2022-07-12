@@ -257,7 +257,9 @@
                                     <tr>
                                         <th scope="col">STT</th>
                                         <th scope="col">Mã Code</th>
+                                        <th scope="col">Sang Zalo</th>
                                         <th scope="col">Ngày Tạo</th>
+                                        
                                         <th scope="col">Hành Động</th>
                                     </tr>
                                 </thead>
@@ -266,7 +268,9 @@
                                         <tr>
                                             <th scope="row"><%=index+1%></th>
                                             <td><%=data.code%></td>
+                                            <td><%=data.toZalo ? "Có":"Không" %></td>
                                             <td><%=data.createdAt%></td>
+                                            
                                             <td>
                                                 <form method="post" action="/admin/code/delete/<%=data._id%>">
                                                     <button type="submit" class="btn btn-danger">Delete</button>

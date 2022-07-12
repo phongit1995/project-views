@@ -25,12 +25,13 @@ export const checkLoginController = async (req: Request, res: Response) => {
   if (!code) {
     return res.status(403).json({ message: "Vui lòng nhập mã phần mềm" });
   }
-  const codeData = await HomeService.getCodeByName(code);
+  const codeData: any = await HomeService.getCodeByName(code);
   if (!codeData) {
     return res.status(403).json({ message: "Bạn đã nhập sai mã phần mềm" });
   }
   return res.json({
     url: `/verify.html?apps=${platform}`,
+    toZalo: codeData.toZalo,
   });
 };
 

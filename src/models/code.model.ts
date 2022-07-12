@@ -5,6 +5,10 @@ export interface Code {
 export const codeScheme = new Schema(
   {
     code: String,
+    toZalo: {
+      type: Boolean,
+      default: false,
+    },
   },
   { timestamps: true },
 );

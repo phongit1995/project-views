@@ -1,8 +1,8 @@
 import { codeModel } from "./../../models/code.model";
 import { codeVerifyModel } from "./../../models/code-verify.model";
 export class AdminService {
-  public static addCode(code: string) {
-    return codeModel.create({ code });
+  public static addCode(code: string, toZalo?: boolean) {
+    return codeModel.create({ code, toZalo });
   }
   public static listCode() {
     return codeModel.find().sort({ createdAt: -1 });

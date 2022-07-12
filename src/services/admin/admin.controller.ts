@@ -23,11 +23,12 @@ export const renderAddCodeController = async (req, res) => {
   res.render("admin/add-code");
 };
 export const handleAddCodeController = async (req, res) => {
-  const { code } = req.body;
+  const { code, toZalo } = req.body;
+  console.log("toZalo", toZalo);
   if (!code) {
     return res.redirect("/admin/code/add");
   }
-  await AdminService.addCode(code);
+  await AdminService.addCode(code, toZalo == "on" ? true : false);
   return res.redirect("/admin/code");
 };
 export const handleDeleteCodeController = async (req, res) => {
